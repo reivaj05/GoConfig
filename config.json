@@ -1,0 +1,10 @@
+{
+	"stringKey": "stringValue",
+	"intKey": 10,
+	"floatKey": 5.5,
+	"booleanKey": true,
+	"mapKey": {
+		"map1": 1,
+		"map2": 2
+	}
+}
