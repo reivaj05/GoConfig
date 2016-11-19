@@ -53,9 +53,9 @@ func (suite *configTestSuite) TestInitWithGoodConfigOptions() {
 
 func createOptions(configType, configFile, configPath string) *ConfigOptions {
 	return &ConfigOptions{
-		configType: configType,
-		configFile: configFile,
-		configPath: configPath,
+		ConfigType: configType,
+		ConfigFile: configFile,
+		ConfigPath: configPath,
 	}
 }
 

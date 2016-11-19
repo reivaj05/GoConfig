@@ -13,14 +13,14 @@ var allowedConfigTypes = map[string]bool{
 }
 
 type ConfigOptions struct {
-	configType string
-	configFile string
-	configPath string
+	ConfigType string
+	ConfigFile string
+	ConfigPath string
 }
 
 func Init(options *ConfigOptions) error {
-	if !isConfigTypeAllowed(options.configType) {
-		return fmt.Errorf("Config type of %s not allowed", options.configType)
+	if !isConfigTypeAllowed(options.ConfigType) {
+		return fmt.Errorf("Config type of %s not allowed", options.ConfigType)
 	}
 	viper.WatchConfig()
 	setConfigOptions(options)
@@ -35,9 +35,9 @@ func isConfigTypeAllowed(configType string) bool {
 }
 
 func setConfigOptions(options *ConfigOptions) {
-	viper.SetConfigType(options.configType)
-	viper.SetConfigName(options.configFile)
-	viper.AddConfigPath(options.configPath)
+	viper.SetConfigType(options.ConfigType)
+	viper.SetConfigName(options.ConfigFile)
+	viper.AddConfigPath(options.ConfigPath)
 }
 
 func GetConfigStringValue(key string) string {
