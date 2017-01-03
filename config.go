@@ -60,6 +60,10 @@ func GetConfigMapValue(key string) map[string]interface{} {
 	return viper.GetStringMap(key)
 }
 
+func SetConfigValue(key string, value interface{}) {
+	viper.Set(key, value)
+}
+
 func HasKey(key string) bool {
 	return viper.IsSet(key)
 }

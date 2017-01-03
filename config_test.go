@@ -103,7 +103,17 @@ func (suite *configTestSuite) TestGetMapValue() {
 	suite.assert.Equal(float64(2), value["map2"].(float64))
 }
 
-func (suite *configTestSuite) TestHasPath() {
+func (suite *configTestSuite) TestSetConfigValue() {
+	setupGetValues()
+	key := "intKey"
+	oldValue := GetConfigIntValue(key)
+	newValue := 100
+	SetConfigValue(key, newValue)
+	suite.assert.NotEqual(oldValue, GetConfigIntValue(key))
+	suite.assert.Equal(newValue, GetConfigIntValue(key))
+}
+
+func (suite *configTestSuite) TestHasKey() {
 	setupGetValues()
 	suite.assert.True(HasKey("stringKey"))
 	suite.assert.False(HasKey("wrongKey"))
