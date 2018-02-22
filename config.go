@@ -22,7 +22,6 @@ func Init(options *ConfigOptions) error {
 	if !isConfigTypeAllowed(options.ConfigType) {
 		return fmt.Errorf("Config type of %s not allowed", options.ConfigType)
 	}
-	viper.WatchConfig()
 	setConfigOptions(options)
 	return viper.ReadInConfig()
 }
